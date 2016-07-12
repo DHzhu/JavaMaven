@@ -28,7 +28,7 @@
 			<version>0.10.0.0</version>
 		</dependency>
 	</dependencies>
-	
+
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
@@ -38,6 +38,7 @@
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
+
 	<build>
 		<plugins>
 			<!-- 指定编译环境版本 -->
