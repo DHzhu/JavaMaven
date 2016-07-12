@@ -44,6 +44,7 @@
 		<property name="connectionFactory" ref="connectionFactory" />
 		<property name="destination" ref="destination" />
 		<property name="messageListener" ref="listener" />
+		<property name="pubSubDomain" value="true" />
 	</bean>
 
 </beans>
