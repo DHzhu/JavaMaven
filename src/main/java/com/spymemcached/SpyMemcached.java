@@ -19,7 +19,7 @@ public class SpyMemcached {
 	@SuppressWarnings("resource")
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		ApplicationContext context = new FileSystemXmlApplicationContext("classpath:applicationContext.xml");
+		ApplicationContext context = new FileSystemXmlApplicationContext("applicationContext_memcached.xml");
 		SpyMemcachedManager memcachedManager = (SpyMemcachedManager) context.getBean("memcachedManager");
 		memcachedManager.add("key", "value", 1000);
 	}
