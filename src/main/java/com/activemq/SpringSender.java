@@ -39,7 +39,7 @@ public class SpringSender {
 	@SuppressWarnings("resource")
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		ApplicationContext ctx = new FileSystemXmlApplicationContext("classpath:ApplicationContext.xml");
+		ApplicationContext ctx = new FileSystemXmlApplicationContext("classpath:ApplicationContext_activemq.xml");
 		SpringSender sender = (SpringSender) ctx.getBean("sender");
 		sender.send();
 	}
