@@ -17,6 +17,19 @@ public class Search {
 		location = Search.binarySearch(arr.clone(), 34, 0, arr.length - 1);
 		
 		System.out.println(location + 1);
+		
+		Search search = new Search();
+		
+		BinaryNode bn = new BinaryNode(arr[0]);
+		for(int i = 1; i < arr.length; i++){
+			bn.add(arr[i]);
+		}
+		
+		search.midOrder(bn);
+		System.out.println();
+		search.preOrder(bn);
+		System.out.println();
+		search.postOrder(bn);
 	}
 	
 	/**
@@ -59,6 +72,45 @@ public class Search {
 		}else{
 			return middle;
 		}
+	}
+	
+	
+	/**
+	 * @desc : 中序遍历
+	 * @date : 2017年1月12日
+	 */
+	public void midOrder(BinaryNode bn){
+		if(bn == null)
+			return;
+		this.midOrder(bn.left);
+		System.out.printf("%2d  ", bn.value);
+		this.midOrder(bn.right);
+	}
+	
+	/**
+	 * @desc : 先序遍历
+	 * @date : 2017年1月12日
+	 */
+	public void preOrder(BinaryNode bn){
+		if(bn == null)
+			return;
+		
+		System.out.printf("%2d  ", bn.value);
+		this.preOrder(bn.left);
+		this.preOrder(bn.right);
+	}
+	
+	/**
+	 * @desc : 后序遍历
+	 * @date : 2017年1月12日
+	 */
+	public void postOrder(BinaryNode bn){
+		if(bn == null)
+			return;
+		
+		this.postOrder(bn.left);
+		this.postOrder(bn.right);
+		System.out.printf("%2d  ", bn.value);
 	}
 }
 
@@ -117,48 +169,7 @@ class BinaryNode{
 		
 		return null;
 	}
-	
-	/**
-	 * @desc : 先序查找
-	 * @date : 2017年1月12日
-	 */
-	public BinaryNode preGet(int value){
-		
-		return null;
-	}
-	
-	/**
-	 * @desc : 后序查找
-	 * @date : 2017年1月12日
-	 */
-	public BinaryNode postGet(int value){
-		
-		return null;
-	}
-	
-	/**
-	 * @desc : 中序遍历
-	 * @date : 2017年1月12日
-	 */
-	public void midOrder(BinaryNode bn){
-		
-	}
-	
-	/**
-	 * @desc : 先序遍历
-	 * @date : 2017年1月12日
-	 */
-	public void preOrder(BinaryNode bn){
-		
-	}
-	
-	/**
-	 * @desc : 后序遍历
-	 * @date : 2017年1月12日
-	 */
-	public void postOrder(BinaryNode bn){
-		
-	}
+
 }
 
 
