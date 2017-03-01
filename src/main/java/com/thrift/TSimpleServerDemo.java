@@ -23,7 +23,7 @@ public class TSimpleServerDemo {
 			System.out.println("server start ...");
 			
 			//定义一个processor对象
-			TProcessor processor = new TSimpleServerService.Processor<TSimpleServerService.Iface>(new TSimpleServerServiceImpl());
+			TProcessor processor = new ThriftServerService.Processor<ThriftServerService.Iface>(new ThriftServerServiceImpl());
 			//定义socket对象，用于tcp的socket通信
 			TServerSocket serverSocket = new TServerSocket(SERVER_PORT);
 			//定义参数对象

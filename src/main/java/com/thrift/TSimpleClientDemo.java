@@ -34,7 +34,7 @@ public class TSimpleClientDemo {
 			//TProtocol protocol = new TJSONProtocol(transport);
 			//TProtocol protocol = new TCompactProtocol(transport);
 			//创建客户端对象
-			TSimpleServerService.Client client = new TSimpleServerService.Client(protocol);
+			ThriftServerService.Client client = new ThriftServerService.Client(protocol);
 			//打开socket连接
 			transport.open();
 			//调用server端函数

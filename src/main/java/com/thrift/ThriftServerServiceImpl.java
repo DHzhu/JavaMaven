@@ -13,7 +13,7 @@ import com.thrift.dataType.ThriftResult;
  * @author: Zhu
  * @date  : 2017年2月28日
  */
-public class TSimpleServerServiceImpl implements TSimpleServerService.Iface{
+public class ThriftServerServiceImpl implements ThriftServerService.Iface{
 
 	/* (non-Javadoc)
 	 * @see com.thrift.TSimpleServerService.Iface#sayHello(java.lang.String)
