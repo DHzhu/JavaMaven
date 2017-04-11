@@ -137,8 +137,7 @@ public class SpyMemcachedManager {
     }
 
     public void printStats(OutputStream stream) throws IOException {
-        Map<SocketAddress, Map<String, String>> statMap = memcachedClient
-                .getStats();
+    	Map<SocketAddress, Map<String, String>> statMap = memcachedClient.getStats();
         if (stream == null) {
             stream = System.out;
         }
@@ -147,16 +146,16 @@ public class SpyMemcachedManager {
         Iterator<SocketAddress> iter = addrSet.iterator();
         while (iter.hasNext()) {
             SocketAddress addr = iter.next();
-            buf.append(addr.toString() + "/n");
+            buf.append(addr.toString() + "\n");
             Map<String, String> stat = statMap.get(addr);
             Set<String> keys = stat.keySet();
             Iterator<String> keyIter = keys.iterator();
             while (keyIter.hasNext()) {
                 String key = keyIter.next();
                 String value = stat.get(key);
-                buf.append("  key=" + key + ";value=" + value + "/n");
+                buf.append("  key=" + key + ";value=" + value + "\n");
             }
-            buf.append("/n");
+            buf.append("\n");
         }
         stream.write(buf.toString().getBytes());
         stream.flush();

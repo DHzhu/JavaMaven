@@ -1,7 +1,7 @@
 package com.spymemcached;
 
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.FileSystemXmlApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
  * @Name  :SpyMemcached
@@ -17,11 +17,13 @@ public class SpyMemcached {
 	 * @throws:
 	 */
 	@SuppressWarnings("resource")
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception{
 		// TODO Auto-generated method stub
-		ApplicationContext context = new FileSystemXmlApplicationContext("applicationContext_memcached.xml");
+		ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext_memcached.xml");
 		SpyMemcachedManager memcachedManager = (SpyMemcachedManager) context.getBean("memcachedManager");
-		memcachedManager.add("key", "value", 1000);
+		//memcachedManager.add("key", "value", 1000);
+		System.out.println(memcachedManager.get("testkey"));
+		memcachedManager.printStats();
 	}
 
 }

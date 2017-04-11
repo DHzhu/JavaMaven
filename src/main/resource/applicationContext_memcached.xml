@@ -28,8 +28,8 @@
             </bean>
         </property>
         <!-- 以毫秒为单位设置默认的操作超时时间 -->
-        <property name="opTimeout" value="1000" />
-        <property name="timeoutExceptionThreshold" value="1998" />
+        <property name="opTimeout" value="2000" />
+        <property name="timeoutExceptionThreshold" value="3000" />
         <!-- 设置哈希算法 -->
         <property name="hashAlg" ref="KETAMA_HASH" />
         <!-- 设置定位器类型(ARRAY_MOD,CONSISTENT),默认是ARRAY_MOD -->

@@ -8,8 +8,8 @@ import javax.jms.Message;
 import javax.jms.Session;
 import javax.jms.TextMessage;
 
-import org.apache.xbean.spring.context.FileSystemXmlApplicationContext;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.jms.core.JmsTemplate;
 import org.springframework.jms.core.MessageCreator;
 
@@ -39,7 +39,7 @@ public class SpringSender {
 	@SuppressWarnings("resource")
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		ApplicationContext ctx = new FileSystemXmlApplicationContext("classpath:ApplicationContext_activemq.xml");
+		ApplicationContext ctx = new ClassPathXmlApplicationContext("ApplicationContext_activemq.xml");
 		SpringSender sender = (SpringSender) ctx.getBean("sender");
 		sender.send();
 	}
